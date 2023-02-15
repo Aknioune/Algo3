@@ -1,0 +1,26 @@
+Algorithm tri
+variable
+   cart,i INTEGER;
+   arr: ARRAY_OF INTEGER[n];
+   arrCopy: ARRAY_OF INTEGER[m];
+
+Begin
+   m:=n+1;
+   FOR i FROM 0 TO n-1 STEP 1  DO
+      arrCopy[i]:=arr[i]
+   END_FOR
+   Read(cart);
+   IF (cart>arrCopy[n-1]) THEN
+   arrCopy[n]:=cart
+   ELSE
+      FOR i FROM n-1 TO 0 STEP 1  DO
+         IF (arrCopy[i]>cart) THEN
+            arrCopy[i+1]:=arrCopy[i]
+         ELSE 
+            arrCopy[i+1]:=cart
+         END_IF
+      END_FOR
+   END_IF
+
+End
+
